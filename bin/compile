@@ -214,6 +214,12 @@ fakechroot fakeroot chroot $CHROOT_DIR \
 
 popd > /dev/null
 
+fakechroot fakeroot chroot $CHROOT_DIR \
+  apt-get update > /dev/null
+
+fakechroot fakeroot chroot $CHROOT_DIR \
+  apt-get install -y libxml2-dev
+    
 # Aptfile?
 if [[ -f "$BUILD_DIR/Aptfile" ]]; then
 
