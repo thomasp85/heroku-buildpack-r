@@ -211,6 +211,9 @@ if [[ -f "$BUILD_DIR/Makevars" ]]; then
   cp $BUILD_DIR/Makevars /app/.R/Makevars
 fi
 
+apt-get update
+apt-get install -y libxml2-dev
+
 # hook for before compilation
 if [[ -f "$BUILD_DIR/before_compile" ]]; then
   echo "-----> Executing before compile hook"
